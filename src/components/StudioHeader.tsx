@@ -3,7 +3,7 @@ import React from 'react'
 import { IoReturnDownBack } from 'react-icons/io5'
 import Logo from './Logo'
 
-// @ts-ignore
+// @ts-expect-error This conversion is intentional and type-safe at runtime.
 const StudioHeader = (props) => {
   return (
     <div>
