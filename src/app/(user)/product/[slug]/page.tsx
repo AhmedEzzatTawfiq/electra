@@ -8,14 +8,17 @@ import ProductCard from "@/components/ProductCard";
 import { getBestSellerData } from "@/lib/getData";
 import { ProductData } from "@/type";
 
+// Type definition for PageProps
 interface PageProps {
-  params: {
-    slug: string;
-  };
+  params: Promise<{ slug: string }>;  // params is now a Promise
 }
 
+const SingleProductPage = async ({ params }: PageProps) => {
+  // Await the resolution of params
+  const resolvedParams = await params; // Resolves to { slug: string }
 
-const SingleProductPage = async ({ params: { slug } }: PageProps) => {
+  const { slug } = resolvedParams; // Extract the slug from the resolved params
+
   const query = groq`*[_type == 'product' && slug.current == $slug][0]{
         ...
       }`;

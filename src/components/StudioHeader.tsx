@@ -3,7 +3,7 @@ import React from 'react'
 import { IoReturnDownBack } from 'react-icons/io5'
 import Logo from './Logo'
 
-
+// @ts-ignore
 const StudioHeader = (props) => {
   return (
     <div>

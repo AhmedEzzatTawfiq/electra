@@ -10,7 +10,6 @@ import FormattedPrice from './FormattedPrice';
 import { MdClose } from 'react-icons/md';
 import { motion, AnimatePresence } from "framer-motion";
 import toast from 'react-hot-toast';
-import Error from 'next/error';
 
 interface Order{
   id: string,
@@ -68,7 +67,7 @@ const Orders = () => {
         <div className="flex flex-col gap-5">
           {orders?.length ? (
             orders?.map((item) => (
-              <div key={item}>
+              <div key={item.id}>
                 <Card className={
                     expandedOrderId === item.id ? "border-darkOrange/30" : ""
                   }>

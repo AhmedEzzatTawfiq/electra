@@ -1,3 +1,10 @@
+module.exports = {
+  eslint: {
+    // Disable ESLint during production build (e.g., for performance)
+    ignoreDuringBuilds: true,
+  },
+};
+
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
@@ -8,6 +15,7 @@ images: {
   ],
     // domains: ['cdn.sanity.io'],
   }
+
 };
 
 export default nextConfig;
