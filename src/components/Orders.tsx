@@ -173,8 +173,8 @@ const Orders = () => {
             ))
           ) : (
             <div>
-              <p className="text-lg font-medium -mt-3">
-                Your order data is empty.
+              <p className="text-lg my-24 font-bold">
+                Your order data is empty!!
               </p>
             </div>
           )}

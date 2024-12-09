@@ -4,6 +4,7 @@ import SearchInput from "./SearchInput";
 import { navBarList } from '../constants';
 import { HiMenuAlt2 } from 'react-icons/hi';
 import Logo from './Logo';
+import DropDown from './DropDown';
 
 
 const Header = () => {
@@ -28,7 +29,7 @@ const Header = () => {
             Studio
           </Link>
         </div>
-        <HiMenuAlt2 className='inline-flex md:hidden cursor-pointer text-2xl hover:text-darkOrange hoverEffect'/>
+        <DropDown />
       </Container>
     </header>
   )
