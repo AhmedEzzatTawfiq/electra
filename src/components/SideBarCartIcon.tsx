@@ -1,12 +1,18 @@
 "use client";
 import { StoreState } from "@/types";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { RiShoppingCart2Fill } from "react-icons/ri";
 import { useSelector } from "react-redux";
 
 const SideBarCartIcon = () => {
   const { cart } = useSelector((state: StoreState) => state?.shoppers);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <Link
       href={"/cart"}
@@ -18,7 +24,7 @@ const SideBarCartIcon = () => {
       </div>
       <p className="text-xs font-semibold">Buy Now</p>
       <p className="absolute top-1 right-2 bg-darkOrange text-white text-xs w-4 h-4 rounded-full flex items-center justify-center font-semibold">
-        {cart ? cart?.length : 0}
+        {mounted ? (cart ? cart?.length : 0) : 0}
       </p>
     </Link>
   );
