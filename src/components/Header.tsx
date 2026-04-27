@@ -111,12 +111,12 @@ const Header = () => {
           </div>
         </div>
       </div>
-      {showMobileSearch && (
+      {mounted && showMobileSearch && (
         <div ref={searchRef} className="sm:hidden px-4 pb-4 bg-white border-b border-gray-200">
           <SearchInput isMobile={true} onSuggestionClick={() => setShowMobileSearch(false)} />
         </div>
       )}
-      {showMobileMenu && (
+      {mounted && showMobileMenu && (
         <div ref={menuRef} className="md:hidden bg-white border-b border-gray-200 shadow-lg px-4 py-4 flex flex-col gap-2">
           {navBarList.map((item) => (
             <Link
@@ -147,7 +147,7 @@ const Header = () => {
                   Sign in
                 </Link>
               )}
-              {session?.user?.email === process.env.ADMIN_EMAIL && (
+              {/* {session?.user?.email === process.env.ADMIN_EMAIL && (
                 <Link
                   href={"/studio"}
                   className="text-base font-medium text-gray-700 hover:text-darkOrange hover:bg-gray-50 px-3 py-2 rounded-md transition-all duration-200 text-center"
@@ -155,7 +155,7 @@ const Header = () => {
                 >
                   Studio
                 </Link>
-              )}
+              )} */}
               {session?.user && (
                 <Link
                   href={"/orders"}
